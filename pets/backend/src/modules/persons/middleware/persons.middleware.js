@@ -19,5 +19,8 @@ module.exports = {
     }
     next();
   },
-  asyncverifyEmailAlreadyExists(request, response, next) {},
+  asyncverifyEmailAlreadyExists(request, response, next) {
+    const {email} = request.body
+  const emailExists = await PersonsRepository.cjeckPersonEmail(email)
+if (!emailExists)  },
 };
